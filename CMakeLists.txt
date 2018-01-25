@@ -26,8 +26,8 @@ set_target_properties(test_main_cli PROPERTIES
 target_link_libraries(cpp01_2_cli cpp01_2)
 
 target_link_libraries(test_main_cli
-	${Boost_LIBRARIES}
-	cpp01_2
+  ${Boost_LIBRARIES}
+  cpp01_2
 )
 
 install(TARGETS cpp01_2_cli RUNTIME DESTINATION bin)
