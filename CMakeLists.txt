@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(sarlyapov_project VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+project(helloworld VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 
 find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
@@ -8,7 +8,7 @@ configure_file(version.h.in version.h)
 
 add_executable(helloworld main.cpp)
 
-add_library(sarlyapov_project lib.cpp)
+add_library(helloworld lib.cpp)
 
 add_executable(test_main_cli test_main.cpp)
 
@@ -24,12 +24,12 @@ set_target_properties(test_main_cli PROPERTIES
 )
 
 target_link_libraries(helloworld
-	sarlyapov_project
+	helloworld
 )
 
 target_link_libraries(test_main_cli
   ${Boost_LIBRARIES}
-  sarlyapov_project
+  helloworld
 )
 
 install(TARGETS helloworld RUNTIME DESTINATION bin)
